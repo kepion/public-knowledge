@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "updated": "2026-07-30",
+  "note": "Curated catalog of public skill repos worth consuming into an AOS. Human guide: ../skill-repo-catalog.md. Full generated skill index: skills-index.json (npm run catalog:skills). Entries are advisory — the consume-skill-repo scan and per-folder license check remain mandatory.",
+  "repos": [
+    {
+      "id": "superpowers",
+      "remote": "https://github.com/obra/superpowers",
+      "branch": "main",
+      "skillsRoot": "skills",
+      "license": "MIT",
+      "tags": ["engineering-process", "debugging", "planning"],
+      "trust": "curated",
+      "description": "Jesse Vincent's superpowers — core engineering process skills (debugging, TDD, planning, verification).",
+      "recommendedAllow": [
+        "systematic-debugging",
+        "test-driven-development",
+        "verification-before-completion",
+        "writing-plans"
+      ],
+      "gotchas": []
+    },
+    {
+      "id": "microsoft-agent-skills",
+      "remote": "https://github.com/MicrosoftDocs/Agent-Skills",
+      "branch": "main",
+      "skillsRoot": "skills",
+      "license": "MIT (code) / CC-BY-4.0 (docs)",
+      "tags": ["microsoft", "azure", "reference"],
+      "trust": "curated",
+      "description": "MicrosoftDocs curated Agent Skills — roughly one skill per Microsoft/Azure service.",
+      "recommendedAllow": [],
+      "gotchas": [
+        "~190 skills — never enable broadly; search skills-index.json and enable only the services you actually use."
+      ]
+    },
+    {
+      "id": "anthropic-skills",
+      "remote": "https://github.com/anthropics/skills",
+      "branch": "main",
+      "skillsRoot": "skills",
+      "license": "Apache-2.0 (examples) / source-available (document skills)",
+      "tags": ["documents", "tooling"],
+      "trust": "curated",
+      "description": "Anthropic's official skills repo — document skills (docx/pdf/pptx/xlsx) plus example skills like mcp-builder and skill-creator.",
+      "recommendedAllow": [
+        "docx",
+        "mcp-builder",
+        "pdf",
+        "pptx",
+        "skill-creator",
+        "webapp-testing",
+        "xlsx"
+      ],
+      "gotchas": [
+        "License varies PER SKILL FOLDER — check before enabling.",
+        "Document skills are source-available: consume-in-place only, never republish."
+      ]
+    },
+    {
+      "id": "knowledge-work-plugins",
+      "remote": "https://github.com/anthropics/knowledge-work-plugins",
+      "branch": "main",
+      "skillsRoot": "finance/skills",
+      "license": "Apache-2.0",
+      "tags": ["finance", "close", "business", "knowledge-work"],
+      "trust": "curated",
+      "description": "Anthropic's knowledge-work plugins — business-function skill bundles (finance, sales, productivity, customer-support, data, legal, marketing...). The finance plugin speaks the FP&A language: close, reconciliation, variance, journal entries, SOX.",
+      "recommendedAllow": [
+        "audit-support",
+        "close-management",
+        "financial-statements",
+        "journal-entry",
+        "journal-entry-prep",
+        "reconciliation",
+        "sox-testing",
+        "variance-analysis"
+      ],
+      "gotchas": [
+        "Marketplace shape: plugins sit at the repo ROOT, each with its own skills/ — the skillsRoot above pins the finance plugin. To consume another plugin (e.g. sales, productivity), register a separate entry with skillsRoot '<plugin>/skills'.",
+        "Skills reference MCP connectors (Snowflake, HubSpot, ...) the operator must wire up or mentally swap for their own stack.",
+        "The repo's example content (small-business, partner-built plugins) contains fictional personas whose emails trip secrets scanners — known false positives; the finance plugin scans clean."
+      ]
+    },
+    {
+      "id": "financial-services",
+      "remote": "https://github.com/anthropics/financial-services",
+      "branch": "main",
+      "skillsRoot": "plugins/vertical-plugins/financial-analysis/skills",
+      "license": "Apache-2.0",
+      "tags": ["finance", "modeling", "valuation", "excel"],
+      "trust": "curated",
+      "description": "Anthropic's Claude for Financial Services — the finance-skills benchmark: financial modeling (DCF, comps, LBO, 3-statement), Excel audit, deck QC, GL reconciliation, month-end close agents, plus partner-built LSEG and S&P Global verticals.",
+      "recommendedAllow": [],
+      "gotchas": [
+        "Marketplace shape: skills live under plugins/vertical-plugins/<vertical>/skills — the skillsRoot above pins the core financial-analysis vertical; browse the other verticals (investment-banking, equity-research, private-equity, fund-admin, operations) and register the ones you need.",
+        "Many skills assume paid market-data MCP connectors (FactSet, Morningstar, PitchBook...) — the modeling/Excel skills work without them.",
+        "Output is draft analyst work product for qualified-professional review — mirror that disclaimer to clients."
+      ]
+    },
+    {
+      "id": "trailofbits-skills",
+      "remote": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "skillsRoot": "plugins/c-review/skills",
+      "license": "CC-BY-SA-4.0",
+      "tags": ["security", "code-audit", "engineering"],
+      "trust": "curated",
+      "description": "Trail of Bits security skills — professional audit methodology from a premier security firm: code review (C/C++, Rust), semgrep rule authoring, supply-chain risk, and agentic-actions-auditor (AI-agent injection vectors in CI workflows).",
+      "recommendedAllow": [],
+      "gotchas": [
+        "Marketplace shape: ~40 plugins each with their own plugins/<plugin>/skills root — the skillsRoot above is one example; browse plugins/ and register entries for the plugins you need (agentic-actions-auditor is the standout for MCP/agent builders).",
+        "CC-BY-SA-4.0, not MIT/Apache: share-alike — derivative skill docs must carry the same license.",
+        "Smart-contract plugins (building-secure-contracts) are out of scope for most adopters — skip them."
+      ]
+    },
+    {
+      "id": "vercel-agent-skills",
+      "remote": "https://github.com/vercel-labs/agent-skills",
+      "branch": "main",
+      "skillsRoot": "skills",
+      "license": "MIT",
+      "tags": ["react", "frontend", "design", "writing"],
+      "trust": "curated",
+      "description": "Vercel Labs agent skills — engineering-derived rulebooks: react-best-practices (40+ performance rules), web-design-guidelines (100+ accessibility/UX checks), writing-guidelines (docs quality).",
+      "recommendedAllow": [
+        "react-best-practices",
+        "web-design-guidelines",
+        "writing-guidelines"
+      ],
+      "gotchas": [
+        "Cherry-pick: the Vercel deploy/optimize skills only matter on Vercel's platform — the three recommended skills are platform-neutral."
+      ]
+    },
+    {
+      "id": "hubspot-admin-skills",
+      "remote": "https://github.com/TomGranot/hubspot-admin-skills",
+      "branch": "main",
+      "skillsRoot": "skills",
+      "license": "MIT",
+      "tags": ["hubspot", "crm", "sales-ops"],
+      "trust": "curated",
+      "description": "HubSpot admin skills (37) with unusually strong safety engineering: portal-wide audit, contact enrichment/assignment, workflows-as-code export, and a sandbox self-test harness. Account-type checks fail closed.",
+      "recommendedAllow": [
+        "hubspot-audit",
+        "sandbox-self-test",
+        "workflows-as-code"
+      ],
+      "gotchas": [
+        "Most skills bundle executable Python scripts — review them per skill before enabling (they are transparent, but they are code).",
+        "Needs a HubSpot private-app token; test in a sandbox portal first (the repo's own guidance).",
+        "Community-maintained (single author, active) — re-check health before broad rollout."
+      ]
+    }
+  ]
+}
