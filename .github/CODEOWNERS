@@ -1,0 +1,10 @@
+# Code owners for this repository.
+#
+# The Kepion org's `standard-repo-rules` ruleset sets require_code_owner_review
+# on main, so this file determines whose approval a pull request needs. The
+# last matching pattern wins, so the catch-all below owns everything.
+#
+# GitHub never lets a pull request's own author satisfy its review requirement,
+# so a PR opened by the owner still needs a second reviewer.
+
+* @bobgillvan
