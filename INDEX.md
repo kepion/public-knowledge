@@ -12,7 +12,7 @@ Every memory file carries flat frontmatter (`name`, `description`, `type`,
 <!-- entries -->
 - [contributing-public-knowledge](CONTRIBUTING.md) — draft: what a public knowledge contribution must contain and how it is reviewed
 - [aos-memory-schema-quickstart](aos-memory-schema-quickstart.md) — how to write a memory file that routes to the correct scope
-- [branch-naming-initials-month-year](branch-naming-initials-month-year.md) — feature branches are `<initials>_<mon><yy>` (bg_aug26), one per operator per month; and why renaming a branch closes its open PR
+- [branch-naming-initials-month-year](branch-naming-initials-month-year.md) — feature branches are `<initials>_<mon><yy>` (xy_aug26), one per operator per month; and why renaming a branch closes its open PR
 - [kepion-true-twin-vs-delta-promote](kepion-true-twin-vs-delta-promote.md) — full-app twin via backup/restore vs object-level delta promote with compare/sync gates
 - [voice-clone-privacy-boundary](voice-clone-privacy-boundary.md) — capability ships in the repo, voice biometrics never do
 - [lifecycle-bookend-events-mask-completion](lifecycle-bookend-events-mask-completion.md) — a resumed session_start outranks the stop that ended the turn, and every safety net skips the row for its own good reason

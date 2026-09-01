@@ -7,10 +7,9 @@ scope: public
 repo: public-knowledge
 ---
 
-A local agent dashboard defaulted to `const HOST = process.env.AOS_HOST || '0.0.0.0'`. It had
-**73 routes and no authentication of any kind** — no token, no CORS policy, no rate limit.
-Among them: a route that spawns an agent host with a caller-supplied prompt, one that
-`execFile`s node to run a schedule, and several that write into the operator's home directory.
+A local dev dashboard defaulted its listen host to `0.0.0.0` behind an env-var override. It
+served **dozens of routes with no authentication of any kind** — no token, no CORS policy, no
+rate limit — and several of those routes could run code or write files on the host.
 
 That combination is unauthenticated remote code execution for anyone who can reach the port,
 running as the operator, with their credentials and client data in reach. It had been that way
@@ -26,29 +25,24 @@ Every signal points the wrong way:
   UI from a phone. The reason expires; the default doesn't.
 - **The UI kept asserting the opposite.** The footer read `local only`. Interfaces state
   security properties as decoration, and the claim is never re-checked against the listener.
-- **The docs were accurate and useless.** The mitigation was documented — "set `AOS_HOST` to
-  limit it to this computer" — as an opt-in for the cautious, so the insecure path stayed the
-  default and the safe one required knowing to ask.
-- **The project already knew better.** A skill *inside the same repo* advised binding
+- **The docs were accurate and useless.** The mitigation was documented — "set the host
+  variable to limit it to this computer" — as an opt-in for the cautious, so the insecure path
+  stayed the default and the safe one required knowing to ask.
+- **The project already knew better.** Guidance *inside the same repo* advised binding
   `127.0.0.1` rather than `0.0.0.0`. Written guidance does not enforce itself.
 
 ## The test suite had encoded the wrong contract
 
-The most useful detail. When the default was flipped, exactly one test failed:
-
-```
-✖ serves the health endpoint on a LAN interface
-```
-
-The suite was asserting the vulnerability *as a requirement*. Someone had confirmed phone
+The most useful detail. When the default was flipped, exactly one test failed — a test that
+asserted an endpoint was served *on a LAN interface*. The suite was asserting the vulnerability *as a requirement*. Someone had confirmed phone
 access worked and pinned it — reasonably, at the time. A test named for a capability
 ("serves on a LAN interface") silently becomes a test against the fix.
 
 Fixing it means asserting both halves of the intended contract, not deleting the test:
 
 ```js
-it('does NOT serve on a LAN interface by default', ...)      // the closed default
-it('serves on a LAN interface when AOS_HOST opts in', ...)   // the opt-in still works
+it('does NOT serve on a LAN interface by default', ...)       // the closed default
+it('serves on a LAN interface when the env var opts in', ...) // the opt-in still works
 ```
 
 Now the security property is enforced, and the escape hatch is proven rather than assumed.

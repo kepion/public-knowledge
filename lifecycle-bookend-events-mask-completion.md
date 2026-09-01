@@ -13,7 +13,7 @@ that asks "what is the newest event for this session?" then reads the reattach a
 were work, and the finished turn never closes.
 
 Symptom: a thread in the dashboard sits at `running` indefinitely, and the follow-up box is
-greyed out with "the current turn is still running". `POST /api/threads/:id/messages`
+greyed out with "the current turn is still running". The thread-message endpoint
 returns **409** whenever the newest run in the chain is `running` or `queued`, so one
 un-closed row makes the whole thread unusable — the work is long done.
 
