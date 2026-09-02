@@ -26,3 +26,4 @@ Every memory file carries flat frontmatter (`name`, `description`, `type`,
 - [aos-home-as-ide-workspace-root](aos-home-as-ide-workspace-root.md) — add ~/.aos as a folder in every multi-root IDE workspace or agent links to memory/drafts/initiatives silently go nowhere; deeper ../, file:// and absolute paths all fail
 - [retrieval-eval-saturates-before-it-discriminates](retrieval-eval-saturates-before-it-discriminates.md) — a benchmark whose baseline already scores 100% Recall@5 can't rank anything; label what the incumbent gets WRONG, isolate prompt-prefix arms, and report p95 not just p50
 - [porting-derived-measures-between-olap-engines](porting-derived-measures-between-olap-engines.md) — cell-scope qualifiers don't survive translation (a leaf larger than its parent is the detector); an attribute-driven coordinate is a loader problem; and a ratio measure is only proven correct when it VARIES up the hierarchy
+- Something else
