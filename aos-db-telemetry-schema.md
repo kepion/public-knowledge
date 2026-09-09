@@ -40,7 +40,7 @@ failures show as `[failed]`). Only run-launched sessions get `initiative` set; i
 sessions are `(none)` unless something tags them — the AOS session-start focus check exists
 to close that gap.
 
-The dashboard API/express server is **:5676** (`core/dashboard/server/index.mjs`, `AOS_PORT`);
-:5675 is the vite client that proxies `/api` → :5676. Curl `http://127.0.0.1:5676/api/overnight`
+The dashboard runs as two local processes: an API/express server (port set by `AOS_PORT`)
+and a vite client that proxies `/api` to it. Curl the API's overnight endpoint on 127.0.0.1
 only if a server is actually listening. The Overnight view reads the operator's `dream-log.md`
 directly.

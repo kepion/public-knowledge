@@ -7,7 +7,7 @@
 # GitHub never lets a pull request's own author satisfy its review requirement,
 # so a PR opened by the owner still needs a second reviewer.
 #
-# Any ONE of the owners below can satisfy the code-owner requirement, so a PR
-# from a student or from one owner can be approved by any of the others.
+# Any ONE member of the team below can satisfy the code-owner requirement, so a PR
+# from a team member can be approved by any other member of the team.
 
-* @bobgillvan @anshulgedamkepion @szhang997 @JoyceGHB
+* @Kepion/professional-services

@@ -12,7 +12,7 @@ Every memory file carries flat frontmatter (`name`, `description`, `type`,
 <!-- entries -->
 - [contributing-public-knowledge](CONTRIBUTING.md) — draft: what a public knowledge contribution must contain and how it is reviewed
 - [aos-memory-schema-quickstart](aos-memory-schema-quickstart.md) — how to write a memory file that routes to the correct scope
-- [branch-naming-initials-month-year](branch-naming-initials-month-year.md) — feature branches are `<initials>_<mon><yy>` (bg_aug26), one per operator per month; and why renaming a branch closes its open PR
+- [branch-naming-initials-month-year](branch-naming-initials-month-year.md) — feature branches are `<initials>_<mon><yy>` (xy_aug26), one per operator per month; and why renaming a branch closes its open PR
 - [kepion-true-twin-vs-delta-promote](kepion-true-twin-vs-delta-promote.md) — full-app twin via backup/restore vs object-level delta promote with compare/sync gates
 - [voice-clone-privacy-boundary](voice-clone-privacy-boundary.md) — capability ships in the repo, voice biometrics never do
 - [lifecycle-bookend-events-mask-completion](lifecycle-bookend-events-mask-completion.md) — a resumed session_start outranks the stop that ended the turn, and every safety net skips the row for its own good reason
@@ -20,10 +20,12 @@ Every memory file carries flat frontmatter (`name`, `description`, `type`,
 - [adopting-skill-repos](adopting-skill-repos.md) — the five-step partner path from "what skills exist?" to skills running on your own hosts: discover, register, allowlist deliberately, sync attended, contribute back
 - [aos-db-telemetry-schema](aos-db-telemetry-schema.md) — querying the local AOS telemetry db from a headless pass: node:sqlite, forward-slash paths, the real column names, and ISO-8601 timestamps
 - [scanner-calibration-per-corpus](scanner-calibration-per-corpus.md) — a secret scanner's patterns don't transfer between corpora: case anchoring, structural slug rejection, why entropy barely helps, and why the report must never quote what it found
+- [filename-guards-need-both-directions](filename-guards-need-both-directions.md) — a rule matching files by NAME can be too broad and too narrow at once; deny broadly and re-admit templates by negation, test must-allow beside must-deny, and treat a false positive as the early warning for a false negative
 - [localhost-tools-drift-to-all-interfaces](localhost-tools-drift-to-all-interfaces.md) — an unauthenticated local dashboard bound to 0.0.0.0 is LAN-wide RCE; why every signal hides it, and how the test suite ends up asserting the vulnerability as a requirement
 - [document-solution-pattern](document-solution-pattern.md) — interview consultant then branded Kepion Office packs + journey walkthrough (multi-select deliverables)
 - [mcp-stateless-migration-pattern](mcp-stateless-migration-pattern.md) — migrating a large stateful MCP server to the 2026-07-28 sessionless spec: inject the routing param centrally so zero handlers change, and why a deprecated state-setter must fail loudly instead of becoming a no-op
 - [aos-home-as-ide-workspace-root](aos-home-as-ide-workspace-root.md) — add ~/.aos as a folder in every multi-root IDE workspace or agent links to memory/drafts/initiatives silently go nowhere; deeper ../, file:// and absolute paths all fail
 - [retrieval-eval-saturates-before-it-discriminates](retrieval-eval-saturates-before-it-discriminates.md) — a benchmark whose baseline already scores 100% Recall@5 can't rank anything; label what the incumbent gets WRONG, isolate prompt-prefix arms, and report p95 not just p50
 - [porting-derived-measures-between-olap-engines](porting-derived-measures-between-olap-engines.md) — cell-scope qualifiers don't survive translation (a leaf larger than its parent is the detector); an attribute-driven coordinate is a loader problem; and a ratio measure is only proven correct when it VARIES up the hierarchy
+- [mcp-connection-failures-look-like-success](mcp-connection-failures-look-like-success.md) — an unread credential var hangs instead of failing (216 orphans, not an auth error), a cache path breaks later, a Windows .bin shim kills signal delivery, and dotenv override:true beats the harness protecting you
 - Something else

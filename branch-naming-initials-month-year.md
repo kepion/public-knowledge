@@ -8,7 +8,7 @@ repo: public-knowledge
 ---
 
 Name a feature branch `<initials>_<mon><yy>`: the operator's initials, an underscore, the
-short lowercase month, and a two-digit year. `bg_aug26`. `jd_sep26`. `ak_jan27`.
+short lowercase month, and a two-digit year. `xy_aug26`. `xy_sep26`. `xy_jan27`.
 
 One branch per operator per month, not one per task. The branch is a *workspace* — whatever
 that person is working on this month lands on it, and the pull request explains the content.
@@ -23,7 +23,7 @@ will not hold.
 
 **How to apply:**
 
-- Create with the convention from the start: `git checkout -b bg_aug26`. Renaming later is
+- Create with the convention from the start: `git checkout -b xy_aug26`. Renaming later is
   the expensive path — see the warning below.
 - Substitute your own initials. Everyone gets their own branch; two people never share one.
 - Roll to a new branch when the month turns. Don't rename last month's — leave it as the
